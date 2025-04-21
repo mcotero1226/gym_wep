@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gimnasio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="container">
+      <h1>🏋️ Gimnasio </h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#sucursales">Sucursales</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    
+
+
+    <!-- Clientes -->
+    <section id="clientes" class="section">
+      <h2 class="section-title">Listado de Clientes</h2>
+      <div class="list-card">
+        <button class="btn-open-modal" id="btn-nuevo-cliente">Nuevo Cliente</button>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Nombre</th><th>Email</th><th>Teléfono</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Juan Pérez</td><td>juan@mail.com</td><td>123456789</td>
+              </tr>
+              <tr>
+                <td>2</td><td>Maria Gomez</td><td>maria@mail.com</td><td>987654348</td>
+              </tr>
+              <tr>
+                <td>3</td><td>Carlos Rodríguez</td><td>carlos@mail.com</td><td>987654348</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sucursales -->
+    <section id="sucursales" class="section">
+      <h2 class="section-title">Listado de Sucursales</h2>
+      <div class="list-card">
+        <button class="btn-open-modal" id="btn-nueva-sucursal">Nueva Sucursal</button>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Gimnasio Central</td><td>Av. Siempre Viva 123</td><td>987654321</td>
+              </tr>
+              <tr>
+                <td>2</td><td>Ciudad Central</td><td>Av. Siempre Viva 123, Ciudad Central</td><td>987654321</td>
+              </tr>
+              <tr>
+                <td>3</td><td>Zona Norte</td><td>Calle del Norte 456, Zona Norte</td><td>+1 (555) 987-654</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Gimnasio Admin. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Modal Cliente -->
+  <div class="modal" id="modalCliente">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal-cliente">&times;</span>
+      <h2>Registrar Nuevo Cliente</h2>
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="text" id="telefono" name="telefono" class="form-input" required>
+        </div>
+        <button type="submit" class="btn-submit">Registrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Sucursal -->
+  <div class="modal" id="modalSucursal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal-sucursal">&times;</span>
+      <h2>Registrar Nueva Sucursal</h2>
+      <form>
+        <div class="form-group">
+          <label for="nombre-sucursal">Nombre</label>
+          <input type="text" id="nombre-sucursal" name="nombre-sucursal" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" name="direccion" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono-sucursal">Teléfono</label>
+          <input type="text" id="telefono-sucursal" name="telefono-sucursal" class="form-input" required>
+        </div>
+        <button type="submit" class="btn-submit">Registrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script>
+    const modalCliente = document.getElementById('modalCliente');
+    const modalSucursal = document.getElementById('modalSucursal');
+
+    const btnNuevoCliente = document.getElementById('btn-nuevo-cliente');
+    const btnNuevaSucursal = document.getElementById('btn-nueva-sucursal');
+
+    const closeModalCliente = document.getElementById('close-modal-cliente');
+    const closeModalSucursal = document.getElementById('close-modal-sucursal');
+
+    // Mostrar modales
+    btnNuevoCliente.addEventListener('click', () => {
+      modalCliente.style.display = 'flex';
+    });
+
+    btnNuevaSucursal.addEventListener('click', () => {
+      modalSucursal.style.display = 'flex';
+    });
+
+    // Cerrar modales
+    closeModalCliente.addEventListener('click', () => {
+      modalCliente.style.display = 'none';
+    });
+
+    closeModalSucursal.addEventListener('click', () => {
+      modalSucursal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === modalCliente) modalCliente.style.display = 'none';
+      if (event.target === modalSucursal) modalSucursal.style.display = 'none';
+    });
+
+    // Evitar que se envíe y cerrar modal
+    const formCliente = modalCliente.querySelector('form');
+    formCliente.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modalCliente.style.display = 'none';
+      formCliente.reset();
+    });
+
+    const formSucursal = modalSucursal.querySelector('form');
+    formSucursal.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modalSucursal.style.display = 'none';
+      formSucursal.reset();
+    });
+  </script>
+
+</body>
+</html>
