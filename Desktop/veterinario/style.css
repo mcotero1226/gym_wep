@@ -1,0 +1,206 @@
+
+
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #2D3E50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffbc00;
+}
+
+/* Estilo general de las secciones */
+.seccion {
+    padding: 40px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 900px; /* Esto limita el ancho máximo de cada sección */
+    width: 90%; /* Asegura que las secciones sean responsivas */
+}
+
+/* Títulos de las secciones */
+.seccion h2,
+.seccion h3 {
+    font-size: 32px;
+    color: #2D3E50;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Párrafos de las secciones */
+.seccion p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    text-align: justify;
+}
+
+/* Misión y Visión (tamaño de fuente ligeramente diferente) */
+.seccion h3 {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+/* Formulario */
+.formulario {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formulario input,
+.formulario textarea,
+.formulario button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: #ffbc00;
+}
+
+.formulario button {
+    background-color: #2D3E50;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #ffbc00;
+}
+
+/* Galería de Imágenes */
+.galeria {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.galeria img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos de los enlaces */
+a {
+    color: #2D3E50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffbc00;
+}
+
+/* Estilo para los enlaces de Sitios de Interés */
+#sitios-de-interes ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sitios-de-interes li {
+    margin-bottom: 10px;
+}
+
+#sitios-de-interes a {
+    color: #2D3E50;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#sitios-de-interes a:hover {
+    color: #ffbc00;
+}
+
+/* Responsive Design: Ajustes para dispositivos pequeños */
+@media (max-width: 768px) {
+    .galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .formulario {
+        width: 90%;
+    }
+
+    header .logo h1 {
+        font-size: 32px;
+    }
+}
